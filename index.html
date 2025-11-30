@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Student Portfolio</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <header>
-         <h1 id="name">Niel Ryan Rabara</h1>
-         <img src="profile.jpg" alt="Profile Picture" id="profile-img">
-         <p id="course-year">Computer Science - 2nd Year</p>
-         <button id="theme-toggle">Switch Theme</button>
-      </header>
-      <section id="achievements">
-         <h2>Achievements/Certifications</h2>
-         <ul>
-            <li>ITS Java Certification</li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="name">Niel Ryan Rabara</h1>
+        <img src="Profile.jpg" alt="Profile Picture" id="profile-img">
+        <p id="course-year">Computer Science - 2nd Year</p>
+        <button id="theme-toggle">Switch Theme</button>
+        <button id="contact-btn">Contact Me</button>
+    </header>
+    
+    <section id="achievements">
+        <h2>Achievements/Certifications</h2>
+        <ul>
+            <li>Dean's List 2023-2024</li>
+            <li>Java ITS Certification</li>
             <li>Microsoft Python Development Professional Certificate</li>
-            <li>Deans Lister 2024-2025</li>
-         </ul>
-      </section>
-      <section id="projects">
-         <h2>Previous Projects</h2>
-         <ul>
-            <li>PocketPiggy: Budgeting App using C#</li>
-            <li>BookWork: Library Sorter using Java</li>
-            <li>Finance Analysis Machine Learning using Python</li>
-         </ul>
-      </section>
-      <script src="script.js"></script>
-   </body>
+        </ul>
+    </section>
+    
+    <section id="projects">
+        <h2>Previous Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">Project 1 Image</div>
+                <h3>PocketPiggy: Budgeting App</h3>
+                <p>Built with C# - A personal finance management application</p>
+            </div>
+            <div class="project-card">
+                <div class="project-image">Project 2 Image</div>
+                <h3>Finance Analyst</h3>
+                <p>Built with Python - Financial data analysis tool</p>
+            </div>
+            <div class="project-card">
+                <div class="project-image">Project 3 Image</div>
+                <h3>BookWorm: Library System</h3>
+                <p>Built with Java - Complete library management system</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact-popup" class="popup">
+        <div class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📧</i> <span>nrRabara@mcm.edu.ph</span>
+                </div>
+                <div class="contact-item">
+                    <i>📧</i> <span>nielrabara90@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i>📍</i> <span>Discord: shun1o</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
