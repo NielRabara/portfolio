@@ -1,21 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const body = document.body;
     
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateButtonText(currentTheme);
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        themeToggle.textContent = 'Switch to Light Mode';
+    }
     
     themeToggle.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateButtonText(newTheme);
+        body.classList.toggle('dark');
+        
+        if (body.classList.contains('dark')) {
+            themeToggle.textContent = 'Switch to Light Mode';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggle.textContent = 'Switch Theme';
+            localStorage.setItem('theme', 'light');
+        }
     });
-    
-    function updateButtonText(theme) {
-        const nextTheme = theme === 'light' ? 'dark' : 'light';
-        themeToggle.textContent = `Switch to ${nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1)} Mode`;
-    }
 });
