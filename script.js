@@ -1,5 +1,21 @@
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark');
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateButtonText(currentTheme);
+    
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateButtonText(newTheme);
+    });
+    
+    function updateButtonText(theme) {
+        const nextTheme = theme === 'light' ? 'dark' : 'light';
+        themeToggle.textContent = `Switch to ${nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1)} Mode`;
+    }
 });
